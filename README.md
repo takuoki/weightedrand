@@ -2,7 +2,7 @@
 
 [![GoDoc](https://godoc.org/github.com/takuoki/weightedrand?status.svg)](https://godoc.org/github.com/takuoki/weightedrand)
 ![CI](https://github.com/takuoki/weightedrand/actions/workflows/auto-test.yml/badge.svg)
-[![codecov](https://codecov.io/gh/takuoki/weightedrand/branch/main/graph/badge.svg)](https://codecov.io/gh/takuoki/weightedrand)
+[![codecov](https://codecov.io/gh/takuoki/weightedrand/branch/main/graph/badge.svg?token=YJGUO2OZDC)](https://codecov.io/gh/takuoki/weightedrand)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 A golang package for weighted random.
