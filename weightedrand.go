@@ -18,7 +18,7 @@ type WeightedRand[T any] struct {
 
 func New[T any](seed int64, items []WeightedItem[T]) *WeightedRand[T] {
 	sum := 0
-	borders := []int{}
+	borders := make([]int, 0, len(items))
 	for _, item := range items {
 		sum += item.Weight
 		borders = append(borders, sum)
