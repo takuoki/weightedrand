@@ -17,11 +17,9 @@ func Example() {
 	// please set the appropriate seed like `time.Now().UnixNano()`.
 	wr := weightedrand.New(1, items)
 
-	fmt.Println(wr.GetItem())
-	fmt.Println(wr.GetItem())
-	fmt.Println(wr.GetItem())
-	fmt.Println(wr.GetItem())
-	fmt.Println(wr.GetItem())
+	for i := 0; i < 5; i++ {
+		fmt.Println(wr.GetItem())
+	}
 
 	// Output:
 	// Hi!
@@ -34,9 +32,6 @@ func Example() {
 func Example_checkRate() {
 
 	const repeat = 100000
-	rate := func(a, b int) float32 {
-		return float32(a) / float32(b) * 100
-	}
 
 	items := []weightedrand.WeightedItem[int]{
 		{Weight: 5, Item: 0},
@@ -52,11 +47,15 @@ func Example_checkRate() {
 	}
 
 	for i := 0; i < len(items); i++ {
-		fmt.Printf("- %d: weight=%d, count=%d, rate=%.2f%%\n", i, items[i].Weight, counts[i], rate(counts[i], repeat))
+		fmt.Printf("- %d: weight=%d, count=%d, rate=%.2f%%\n", i, items[i].Weight, counts[i], calcRate(counts[i], repeat))
 	}
 
 	// Output:
 	// - 0: weight=5, count=49965, rate=49.97%
 	// - 1: weight=3, count=30295, rate=30.30%
 	// - 2: weight=2, count=19740, rate=19.74%
+}
+
+func calcRate(a, b int) float32 {
+	return float32(a) / float32(b) * 100
 }
